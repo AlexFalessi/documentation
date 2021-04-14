@@ -136,12 +136,12 @@ image::channel-sub.png[align="center"]
 , they will appear to the user.
 - Channel notifications cannot be deleted, the link:../admin/ProActiveAdminGuide.html#_notification_housekeeping[Housekeeping]
 takes care of it once their life span is exceeded.
-- Notification service administrators can subscribe to any channels. Other users must be part of at least one of the authorized group
+- Notification service administrators can subscribe to any channels. Other users must be part of at least one of the authorized groups
 defined in the channel in order to subscribe to a channel, unless all groups are authorized.
 
 ==== Channel Creation
 
-All users are able to create channels for any groups. It is needed to provide a unique channel name and a list of groups
+All users are able to create channels for any group. It is needed to provide a unique channel name and a list of groups
 which will be able to subscribe the the channel.
 
 It can either be all groups authorized, one or more groups of the current users, or any free input.
@@ -171,7 +171,7 @@ By default, If the user executing the workflow is a notification-service adminis
 it notifies all channels available to the user.
 
 In order to customize the notification, a user may update the task's variables to change the notification's message,
-it's severity and the notified channels provided as a comma separated list.
+it's severity and the notified channels which are provided as a comma separated list.
 
 [title="Channel_Notification task variables"]
 image::channel-notif-task-variables.png[align="center"]
