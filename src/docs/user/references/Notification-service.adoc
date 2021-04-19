@@ -141,10 +141,10 @@ defined in the channel in order to subscribe to a channel, unless all groups are
 
 ==== Channel Creation
 
-All users are able to create channels for any group. It is needed to provide a unique channel name and a list of groups
-which will be able to subscribe the the channel.
+All users are able to create channels for any group. It is required to provide a unique channel name and a list of groups
+which will be able to subscribe to the channel.
 
-It can either be all groups authorized, one or more groups of the current users, or any free input.
+It can either be authorized for all groups, one or more groups of the current users, or any free input.
 
 [title="Channel creation"]
 image::create-channel.png[align="center"]
@@ -153,28 +153,33 @@ image::create-channel.png[align="center"]
 
 Channel management is where users can update channels by modifying a channel's name, add or remove authorized groups or delete it.
 
-A notification service administrator is able to update any channels, regardless if he is the creator of the channel or not.
-Other users can update only channels that they created.
+A notification service administrator is able to update any channels, whether he is the creator of the channel or not.
+Other users can update only channels that they have created.
 
-To update a channel's name or authorized groups, simply make the update and click on the "Save" button.
+To update a channel's name or authorized groups, simply make the update and click on the __Save__ button.
 
-To delete a channel, click on the bin icon on the left of the channel definition.
+To delete a channel, click on the __Bin__ icon on the left of the channel definition.
 
 [title="Channel creation"]
 image::channel-management.png[align="center"]
 
 ==== Channel Notification
 
-In order to send a channel notification a user must append the Channel_Notification task to a workflow.
+In order to send a channel notification a user must append the Channel_Notification task to a <<_glossary_workflow, Workflow>>.
 
-By default, If the user executing the workflow is a notification-service administrator, it will notify all channels. Otherwise
-it notifies all channels available to the user.
-
-In order to customize the notification, a user may update the task's variables to change the notification's message,
-it's severity and the notified channels which are provided as a comma separated list.
+The notification's message, severity and notified groups are configurable by the user.
+Simply update the following *Task variables* values to do so.
 
 [title="Channel_Notification task variables"]
 image::channel-notif-task-variables.png[align="center"]
+
+- *MESSAGE:* The message that will be displayed to the notified users. This variable is a free input
+and cannot be empty.
+- *SEVERITY:* Users can define the notification's severity by updating this variable. Available severities are
+INFO, WARNING, ERROR, CRITICAL. The default severity is INFO.
+- *CHANNELS:* A single channel or a comma separated list of channels that will be notified.
+By default, this value is set to "All". If the user executing the workflow is a notification-service administrator, it will notify all channels. Otherwise
+it notifies all channels available for the user to subscribe.
 
 === Event types
 
